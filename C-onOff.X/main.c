@@ -3,6 +3,7 @@
 #include "main.h"
 #include "clock.h"
 #include "gpio.h"
+#include "timer0.h"
 
 void main(void) {
      
@@ -27,7 +28,10 @@ void main(void) {
     PortE_Initialize();
     
     /* Config PortF */
-    PortF_Initialize();  
+    PortF_Initialize(); 
+    
+    /* Config TIMER0 */
+    //TIMER0_Initialize();
     
     
     /* infinite loop */
@@ -37,12 +41,19 @@ void main(void) {
             
         {   /* if status is OFF */
             if (systemStatus==0)
+            {
                 /* change status to ON*/
                 systemStatus = 1;
+                TIMER0_Delay_ms(10);
+            }
             else
+            {
                 /* change status to OFF */
                 systemStatus = 0;
+                TIMER0_Delay_ms(10);
+            }
         }
+        
            
         if (systemStatus == 0)
             /* Turn off LED on RF3 */

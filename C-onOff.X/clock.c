@@ -8,8 +8,8 @@ void CLOCK_Initialize(void)
     OSCEN = 0x40;
     
     /* HFINTOSC = 1 MHz */
-	OSCFRQ = 0x08;
+	OSCFRQ = 0x00;
     
-    /* Clock source = HFINTOSC, Clock Divider = 64 */
-    OSCCON1 = 0x66;
+    /* Clock source = HFINTOSC, Clock Divider = 1 */
+    OSCCON1 = 0x60;
 }

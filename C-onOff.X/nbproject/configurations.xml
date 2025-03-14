@@ -25,6 +25,7 @@
       <itemPath>gpio.c</itemPath>
       <itemPath>configbits.c</itemPath>
       <itemPath>clock.c</itemPath>
+      <itemPath>timer0.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
